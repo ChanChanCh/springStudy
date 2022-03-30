@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import kr.co.songjava.mvc.domain.Board;
@@ -28,6 +30,7 @@ public class BoardController {
 	 * 목록 리턴
 	 * @return
 	 */
+	@GetMapping
 	public List<Board> getList() {
 		return boardService.getList();
 	}
@@ -37,32 +40,26 @@ public class BoardController {
 	 * @param boardSeq
 	 * @return
 	 */
-	
-	public Board get(int boardSeq) {
+	@GetMapping("/{boardSeq}")
+	public Board get(@PathVariable int boardSeq) {
 		return boardService.get(boardSeq);
 	}
 
 	/*
-	 * 등록 처리.
+	 * 등록 / 수정 처리.
 	 * @param board
 	 */
+	@GetMapping ("/save") // 실무에서는 수정 등록 처리하는곳에선 GetMapping을 사용하지 않는다
 	public void save(Board board) {
 		boardService.save(board);
 	}
-	
-	/*
-	 * 업데이트 처리
-	 * @param board
-	 */
-	public void update(Board board) {
-		boardService.update(board);
-	}
-	
+		
 	/*
 	 * 삭제 처리
 	 * @param boardSeq
 	 */
-	public void delete(int boardSeq) {
+	@GetMapping ("/delete/{boardSeq}")
+	public void delete(@PathVariable int boardSeq) {
 		boardService.delete(boardSeq);
 	}
 	
