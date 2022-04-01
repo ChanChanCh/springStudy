@@ -8,6 +8,12 @@ import org.springframework.stereotype.Service;
 
 import kr.co.songjava.mvc.domain.Board;
 
+
+/*
+ * 게시판 Repository
+ * @author Root
+ */
+
 @Repository
 public interface BoardRepository {
 	
