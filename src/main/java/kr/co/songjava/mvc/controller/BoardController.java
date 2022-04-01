@@ -8,31 +8,6 @@ import org.springframework.stereotype.Service;
 
 import kr.co.songjava.mvc.domain.Board;
 
-@Repository
-public interface BoardRepository {
-	
-	//리스트
-	List<Board> getList();
-	
-	//  단건?
-	Board get(int boardSeq);
-	
-	// 등록
-	void save(Board board);
-	
-	// 업데이트
-	void update(Board board);
-	
-	// 삭제
-	void delete(int boardSeq);
-		
-	// 후에 xml과 연결이되 실행이됨
-}
-/*
- * 게시판 컨트롤러
- * @author Root
- */
-
 
 @RestController
 public class BoardController {
