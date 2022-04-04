@@ -1,8 +1,18 @@
+<<<<<<< HEAD
+package kr.co.songjava.mvc.repository;
+=======
 package kr.co.songjava.mvc.controller;
+>>>>>>> e9555eb7fe9b95a8dff258defaf7bb8ba7560883
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+<<<<<<< HEAD
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
+import kr.co.songjava.mvc.domain.Board;
+=======
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -18,6 +28,7 @@ import kr.co.songjava.mvc.service.BoardService;
  * 게시판 컨트롤러
  * @author Root
  */
+>>>>>>> e9555eb7fe9b95a8dff258defaf7bb8ba7560883
 
 
 @RestController
@@ -30,7 +41,10 @@ public class BoardController {
 	 * 목록 리턴
 	 * @return
 	 */
+<<<<<<< HEAD
+=======
 	@GetMapping
+>>>>>>> e9555eb7fe9b95a8dff258defaf7bb8ba7560883
 	public List<Board> getList() {
 		return boardService.getList();
 	}
@@ -40,12 +54,34 @@ public class BoardController {
 	 * @param boardSeq
 	 * @return
 	 */
+<<<<<<< HEAD
+	
+	public Board get(int boardSeq) {
+=======
 	@GetMapping("/{boardSeq}")
 	public Board get(@PathVariable int boardSeq) {
+>>>>>>> e9555eb7fe9b95a8dff258defaf7bb8ba7560883
 		return boardService.get(boardSeq);
 	}
 
 	/*
+<<<<<<< HEAD
+	 * 등록 처리.
+	 * @param board
+	 */
+	public void save(Board board) {
+		boardService.save(board);
+	}
+	
+	/*
+	 * 업데이트 처리
+	 * @param board
+	 */
+	public void update(Board board) {
+		boardService.update(board);
+	}
+	
+=======
 	 * 등록 / 수정 처리.
 	 * @param board
 	 */
@@ -54,13 +90,23 @@ public class BoardController {
 		boardService.save(board);
 	}
 		
+>>>>>>> e9555eb7fe9b95a8dff258defaf7bb8ba7560883
 	/*
 	 * 삭제 처리
 	 * @param boardSeq
 	 */
+<<<<<<< HEAD
+	public void delete(int boardSeq) {
+		boardService.delete(boardSeq);
+	}
+	
+}
+
+=======
 	@GetMapping ("/delete/{boardSeq}")
 	public void delete(@PathVariable int boardSeq) {
 		boardService.delete(boardSeq);
 	}
 	
 }
+>>>>>>> e9555eb7fe9b95a8dff258defaf7bb8ba7560883
