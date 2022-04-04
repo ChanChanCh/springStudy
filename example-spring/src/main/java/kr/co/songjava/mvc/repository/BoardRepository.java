@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import kr.co.songjava.mvc.domain.Board;
 
-Repository
+@Repository
 public interface BoardRepository {
 	
 	List<Board> getlist();
